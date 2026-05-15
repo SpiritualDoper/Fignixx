@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Fignix | Design, Web & AI Agency</title>
+    <!-- Theme Script (Immediate to prevent FOUC) -->
+    <script src="assets/js/theme.js"></script>
+    <meta name="description" content="Learn about Fignix, a creative digital agency offering branding, website development, ecommerce solutions, UI/UX design, and AI-powered services for startups and growing businesses.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="about-page">
+    <canvas id="global-canvas"></canvas>
+
+    <!-- Header Section -->
+    <div id="header-container" class="header-container">
+        <header class="header">
+            <div class="header-logo">
+                <div class="logo-icon-wrapper">
+                    <div class="logo-top-half"></div>
+                    <div class="logo-bottom-half"></div>
+                </div>
+                <span class="logo-text">Fignix</span>
+            </div>
+            
+            <nav class="header-nav">
+                <a href="index.html" class="nav-link">Home</a>
+                <div class="nav-item has-dropdown">
+                    <a href="services.html" class="nav-link">
+                        <span class="dot"></span>Services <span class="dropdown-arrow">›</span>
+                    </a>
+                    <div class="mega-menu">
+                        <div class="mega-menu-grid">
+                            <a href="service-website-design.html" class="mega-service-card">
+                                <div class="card-bg" style="background-image: url('assets/images/service_website_design_hero.png');"></div>
+                                <div class="card-overlay"></div>
+                                <div class="card-content">
+                                    <h4>Website Design & Hosting</h4>
+                                    <span class="card-arrow">›</span>
+                                </div>
+                            </a>
+                            <a href="service-digital-marketing.html" class="mega-service-card">
+                                <div class="card-bg" style="background-image: url('assets/images/service_marketing_hero.png');"></div>
+                                <div class="card-overlay"></div>
+                                <div class="card-content">
+                                    <h4>Digital Marketing</h4>
+                                    <span class="card-arrow">›</span>
+                                </div>
+                            </a>
+                            <a href="service-graphic-logo-design.html" class="mega-service-card">
+                                <div class="card-bg" style="background-image: url('assets/images/service_branding_hero.png');"></div>
+                                <div class="card-overlay"></div>
+                                <div class="card-content">
+                                    <h4>Graphic & Logo Designing</h4>
+                                    <span class="card-arrow">›</span>
+                                </div>
+                            </a>
+                            <a href="service-digital-ooh.html" class="mega-service-card">
+                                <div class="card-bg" style="background-image: url('assets/images/service_ooh_hero.png');"></div>
+                                <div class="card-overlay"></div>
+                                <div class="card-content">
+                                    <h4>Digital OOH Advertising</h4>
+                                    <span class="card-arrow">›</span>
+                                </div>
+                            </a>
+                            <a href="service-print-packaging.html" class="mega-service-card">
+                                <div class="card-bg" style="background-image: url('assets/images/service_print_packaging_hero.png');"></div>
+                                <div class="card-overlay"></div>
+                                <div class="card-content">
+                                    <h4>Print & Packaging</h4>
+                                    <span class="card-arrow">›</span>
+                                </div>
+                            </a>
+                            <a href="service-seo.html" class="mega-service-card">
+                                <div class="card-bg" style="background-image: url('assets/images/service_seo_hero.png');"></div>
+                                <div class="card-overlay"></div>
+                                <div class="card-content">
+                                    <h4>Search Engine Optimization</h4>
+                                    <span class="card-arrow">›</span>
+                                </div>
+                            </a>
+                            <a href="service-ai-photoshoots.html" class="mega-service-card">
+                                <div class="card-bg" style="background-image: url('assets/images/service_ai_photoshoot_hero.png');"></div>
+                                <div class="card-overlay"></div>
+                                <div class="card-content">
+                                    <h4>AI Product Photoshoots</h4>
+                                    <span class="card-arrow">›</span>
+                                </div>
+                            </a>
+                            <a href="service-ai-video.html" class="mega-service-card">
+                                <div class="card-bg" style="background-image: url('assets/images/service_ai_video_hero.png');"></div>
+                                <div class="card-overlay"></div>
+                                <div class="card-content">
+                                    <h4>AI Video Creation</h4>
+                                    <span class="card-arrow">›</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="nav-item">
+                    <a href="about.html" class="nav-link active">About Us</a>
+                </div>
+                <div class="nav-item">
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </div>
+            </nav>
+            
+            <div class="header-action">
+                <!-- Mobile Toggle -->
+                <button class="mobile-menu-toggle" id="mobile-toggle" aria-label="Toggle Mobile Menu">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <line x1="3" y1="12" x2="21" y2="12" class="line-mid"></line>
+                        <line x1="3" y1="6" x2="21" y2="6" class="line-top"></line>
+                        <line x1="3" y1="18" x2="21" y2="18" class="line-bot"></line>
+                    </svg>
+                </button>
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle Theme">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="sun-icon toggle-icon"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.07" x2="5.64" y2="17.66"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="moon-icon toggle-icon"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                </button>
+                <button class="btn btn-primary" onclick="openContactModal()">Let's Talk</button>
+            </div>
+            <!-- Mobile Navigation Drawer -->
+            <div class="mobile-nav" id="mobile-nav">
+                <a href="index.html" class="mobile-nav-link">Home</a>
+                <a href="about.html" class="mobile-nav-link">About Us</a>
+                <a href="services.html" class="mobile-nav-link">All Services</a>
+                
+                <div class="mobile-services-accordion">
+                    <div class="mobile-services-label">Specialties</div>
+                    <div class="mobile-services-list">
+                        <a href="service-website-design.html" class="mobile-service-item">Web Design</a>
+                        <a href="service-digital-marketing.html" class="mobile-service-item">Marketing</a>
+                        <a href="service-graphic-logo-design.html" class="mobile-service-item">Branding</a>
+                        <a href="service-seo.html" class="mobile-service-item">SEO Solutions</a>
+                        <a href="service-print-packaging.html" class="mobile-service-item">Packaging</a>
+                    </div>
+                </div>
+                
+                <div style="margin-top: auto; padding-top: 2rem; border-top: 1px solid var(--border-color); display: flex; flex-direction: column; gap: 1rem;">
+                    <a href="contact.html" class="mobile-nav-link" style="color: var(--primary); font-size: 1.5rem;">Contact Us</a>
+                    <button class="btn btn-primary" onclick="openContactModal()" style="width: 100%; padding: 1rem; font-size: 1.1rem; border-radius: 500px;">Let's Talk</button>
+                </div>
+            </div>
+        </header>
+    </div>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="container hero-layout">
+            <div class="hero-content">
+                <div class="about-badge">ABOUT FIGNIX</div>
+                <h1>Building Creative Digital Experiences with Strategy, Design and Intelligence</h1>
+                <p>Fignix is a modern creative agency focused on <span class="text-highlight">helping brands grow through design systems, websites, ecommerce experiences, and AI-powered digital solutions.</span> We combine visual thinking with technology to create work that performs.</p>
+                <div class="hero-actions">
+                    <a href="#story" class="btn btn-primary">Our Journey</a>
+                </div>
+            </div>
+            <div class="hero-visuals">
+                <div class="hero-image-card large">
+                    <img src="assets/images/digital_creative_team_hero_1775804508343.png" alt="Fignix Creative Team">
+                </div>
+                <div class="hero-image-card">
+                    <img src="assets/images/ui_design_workspace_1775804527760.png" alt="UI Design Workspace">
+                </div>
+                <div class="hero-image-card">
+                    <img src="assets/images/creative_brainstorming_1775804543877.png" alt="Brainstorming Session">
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Section -->
+        <section class="container stats-section">
+            <div class="stats-grid reveal-up">
+                <div class="stat-card" data-end="20" data-suffix="+">
+                    <div class="stat-number"><span class="count-numeric">0</span>+</div>
+                    <p>Projects Delivered</p>
+                </div>
+                <div class="stat-card" data-end="3" data-suffix="+">
+                    <div class="stat-number"><span class="count-numeric">0</span>+</div>
+                    <p>Years of Creative Experience</p>
+                </div>
+                <div class="stat-card" data-end="100" data-suffix="%">
+                    <div class="stat-number"><span class="count-numeric">0</span>%</div>
+                    <p>Focused on Quality & Innovation</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Story Section -->
+        <section class="story-section" id="story">
+            <div class="container">
+                <div class="story-header reveal-up">
+                    <div class="about-badge">OUR JOURNEY</div>
+                    <h2>Where Creative Thinking Meets Digital Execution</h2>
+                </div>
+                <div class="story-content reveal-up">
+                    <p>Fignix started with a simple idea — combine strong visual thinking with practical digital execution. From branding and websites to ecommerce and AI-led systems, every project is built to help businesses communicate clearly and grow confidently.</p>
+                    <p>We believe great digital work is not only beautiful but functional, scalable, and strategically aligned. Every brand deserves thoughtful design, modern technology, and solutions that create long-term value.</p>
+                    <div class="story-highlight">
+                        We build digital foundations that help ambitious brands move forward with clarity, speed, and confidence.
+                    </div>
+                </div>
+
+                <div class="story-banner reveal-up">
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Fignix Process Visualization">
+                    <div class="story-banner-overlay">
+                        <h2>Designing digital systems that help businesses grow smarter.</h2>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mission Section -->
+        <section class="section-padding container">
+            <div class="mission-grid">
+                <div class="mission-content reveal-up">
+                    <div class="about-badge">OUR APPROACH</div>
+                    <h2>Creative Systems Built for Modern Growth</h2>
+                    <p>Our approach combines design clarity, technical execution, and future-ready thinking. We focus on building solutions that are visually strong, strategically useful, and adaptable for tomorrow.</p>
+                </div>
+                <div class="mission-values">
+                    <div class="value-card reveal-up">
+                        <div class="value-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v8"/><path d="M8 12h8"/></svg>
+                        </div>
+                        <h4>Design Thinking</h4>
+                        <p>We solve business problems through visual clarity and thoughtful user experiences.</p>
+                    </div>
+                    <div class="value-card reveal-up">
+                        <div class="value-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                        </div>
+                        <h4>Web Precision</h4>
+                        <p>Every website is built for speed, usability, and conversion.</p>
+                    </div>
+                    <div class="value-card reveal-up">
+                        <div class="value-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4"/><path d="M12 18v4"/><path d="M4.93 4.93l2.83 2.83"/><path d="M16.24 16.24l2.83 2.83"/><path d="M2 12h4"/><path d="M18 12h4"/><path d="M4.93 19.07l2.83-2.83"/><path d="M16.24 7.76l2.83-2.83"/></svg>
+                        </div>
+                        <h4>AI Integration</h4>
+                        <p>We explore intelligent workflows that help brands work smarter.</p>
+                    </div>
+                    <div class="value-card reveal-up">
+                        <div class="value-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg>
+                        </div>
+                        <h4>Reliable Delivery</h4>
+                        <p>We focus on clear process, communication, and quality outcomes.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Team Section (Founder Led) -->
+        <section class="team-section section-padding">
+            <div class="container">
+                <div class="team-header reveal-up">
+                    <div class="about-badge">WHO WE ARE</div>
+                    <h2>A Creative Studio Built for Modern Brands</h2>
+                </div>
+                <div class="team-grid">
+                    <div class="team-card reveal-up">
+                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Founder">
+                        <div class="team-info">
+                            <h4>Creative Direction</h4>
+                            <p>Founder & Strategy</p>
+                        </div>
+                    </div>
+                    <div class="team-card reveal-up" style="transition-delay: 0.1s;">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Design Lead">
+                        <div class="team-info">
+                            <h4>Visual Systems</h4>
+                            <p>Design & Branding</p>
+                        </div>
+                    </div>
+                    <div class="team-card reveal-up" style="transition-delay: 0.2s;">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Dev Lead">
+                        <div class="team-info">
+                            <h4>Development</h4>
+                            <p>Web & Tech Execution</p>
+                        </div>
+                    </div>
+                    <div class="team-card reveal-up" style="transition-delay: 0.3s;">
+                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="AI Research">
+                        <div class="team-info">
+                            <h4>Digital Research</h4>
+                            <p>AI & Intelligent Flows</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEO/Trust Section -->
+        <section class="trust-section container">
+            <div class="reveal-up">
+                <div class="about-badge">OUR EDGE</div>
+                <h2>Why Businesses Work With Fignix</h2>
+            </div>
+            <div class="trust-grid">
+                <div class="trust-card reveal-up">
+                    <h3 class="text-highlight">Strategy-led execution</h3>
+                    <p>We don't just build; we think. Every design and line of code is aligned with your business objectives.</p>
+                </div>
+                <div class="trust-card reveal-up">
+                    <h3 class="text-highlight">Modern visual language</h3>
+                    <p>We create premium, high-end aesthetics that help your brand stand out in a crowded digital space.</p>
+                </div>
+                <div class="trust-card reveal-up">
+                    <h3 class="text-highlight">Scalable digital thinking</h3>
+                    <p>Our solutions are built to grow with you, ensuring long-term technical and visual stability.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final CTA -->
+        <section class="final-cta reveal-up">
+            <div class="container">
+                <h2>Let’s build something meaningful together.</h2>
+                <button class="btn btn-primary" onclick="openContactModal()">Start Your Project</button>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+        <footer class="footer section-padding container" style="background-color: var(--bg-color); border-top: 1px solid var(--border-color);">
+        <div class="footer-bottom">
+            <div class="footer-left">
+                <p class="footer-label">Email Us</p>
+                <a href="mailto:hello@fignix.com" class="footer-email">hello@fignix.com</a>
+                <p class="footer-copy">© 2026 FIGNIXlab. All rights reserved.</p>
+            </div>
+            <div class="footer-links-grid">
+                <div class="footer-column">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">All Services</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="service-website-design.html">Web Design</a></li>
+                        <li><a href="service-digital-marketing.html">Marketing</a></li>
+                        <li><a href="service-graphic-logo-design.html">Branding</a></li>
+                        <li><a href="service-digital-ooh.html">Digital OOH</a></li>
+                        <li><a href="service-print-packaging.html">Print & Packaging</a></li>
+                        <li><a href="service-seo.html">SEO</a></li>
+                        <li><a href="service-ai-photoshoots.html">AI Photoshoots</a></li>
+                        <li><a href="service-ai-video.html">AI Video</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Social</h4>
+                    <ul class="social-links">
+                        <li><a href="#" aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a></li>
+                        <li><a href="#" aria-label="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg></a></li>
+                        <li><a href="#" aria-label="Twitter"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Contact Modal -->
+    <div id="contact-modal" class="contact-modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeContactModal()">&times;</button>
+            <div class="modal-header">
+                <h2 class="modal-title">Let's Talk</h2>
+                <p class="modal-subtitle">Share your vision with us and we'll bring it to life.</p>
+            </div>
+            <form class="modal-form" onsubmit="handleFormSubmit(event)">
+                <div class="form-group">
+                    <label for="modal-name">Full Name</label>
+                    <input type="text" id="modal-name" placeholder="John Doe" required>
+                </div>
+                <div class="form-group">
+                    <label for="modal-email">Email Address</label>
+                    <input type="email" id="modal-email" placeholder="john@example.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="modal-service">Service Interested In</label>
+                    <select id="modal-service" required>
+                        <option value="" disabled selected>Select a service</option>
+                        <option value="website">Website Design & Hosting</option>
+                        <option value="marketing">Digital Marketing</option>
+                        <option value="seo">SEO Optimization</option>
+                        <option value="branding">Graphic & Logo Design</option>
+                        <option value="ooh">Digital OOH Advertising</option>
+                        <option value="ai">AI Creative Services</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="modal-message">Message</label>
+                    <textarea id="modal-message" placeholder="Tell us about your project..." required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 1rem;">Send Message</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/global-canvas.js"></script>
+</body>
+</html>

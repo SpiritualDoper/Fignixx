@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Page Not Found | Fignix</title>
+    <!-- Theme Script (Immediate to prevent FOUC) -->
+    <script src="assets/js/theme.js"></script>
+    <meta name="description" content="The page you are looking for could not be found.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="assets/css/style.css?v=3">
+    <style>
+        .error-hero {
+            padding-top: calc(var(--nav-height) + 10rem);
+            padding-bottom: 8rem;
+            text-align: center;
+            min-height: 70vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .error-code {
+            font-size: clamp(8rem, 20vw, 15rem);
+            font-weight: 800;
+            line-height: 1;
+            margin-bottom: 1rem;
+            letter-spacing: -0.05em;
+            position: relative;
+            animation: glitch 3s infinite;
+        }
+
+        .error-code::before,
+        .error-code::after {
+            content: "404";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.8;
+        }
+
+        .error-code::before {
+            color: var(--highlight);
+            z-index: -1;
+            animation: glitch-anim-1 2s infinite linear alternate-reverse;
+        }
+
+        .error-code::after {
+            color: #0ff;
+            z-index: -2;
+            animation: glitch-anim-2 3s infinite linear alternate-reverse;
+        }
+
+        @keyframes glitch {
+            0% { transform: translate(0) }
+            20% { transform: translate(-2px, 2px) }
+            40% { transform: translate(-2px, -2px) }
+            60% { transform: translate(2px, 2px) }
+            80% { transform: translate(2px, -2px) }
+            100% { transform: translate(0) }
+        }
+
+        @keyframes glitch-anim-1 {
+            0% { clip-path: inset(20% 0 80% 0); transform: translate(-4px, 1px); }
+            20% { clip-path: inset(60% 0 10% 0); transform: translate(2px, -3px); }
+            40% { clip-path: inset(40% 0 50% 0); transform: translate(-3px, 2px); }
+            60% { clip-path: inset(80% 0 5% 0); transform: translate(4px, -1px); }
+            80% { clip-path: inset(10% 0 70% 0); transform: translate(-1px, 3px); }
+            100% { clip-path: inset(30% 0 50% 0); transform: translate(3px, -2px); }
+        }
+
+        @keyframes glitch-anim-2 {
+            0% { clip-path: inset(10% 0 60% 0); transform: translate(3px, -2px); }
+            20% { clip-path: inset(30% 0 20% 0); transform: translate(-1px, 3px); }
+            40% { clip-path: inset(70% 0 10% 0); transform: translate(2px, -1px); }
+            60% { clip-path: inset(20% 0 50% 0); transform: translate(-3px, 2px); }
+            80% { clip-path: inset(50% 0 30% 0); transform: translate(1px, -3px); }
+            100% { clip-path: inset(5% 0 80% 0); transform: translate(-2px, 1px); }
+        }
+
+        .error-title {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: var(--text-dark);
+            position: relative;
+            z-index: 2;
+        }
+
+        [data-theme="dark"] .error-title {
+            color: var(--text-light);
+        }
+
+        .error-description {
+            font-size: 1.25rem;
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto 3rem;
+            line-height: 1.6;
+            position: relative;
+            z-index: 2;
+        }
+
+        .geometric-shape-404 {
+            position: absolute;
+            z-index: 0;
+            opacity: 0.15;
+            pointer-events: none;
+        }
+
+        .shape-1 {
+            top: 10%;
+            left: 10%;
+            width: 400px;
+            height: 400px;
+            border-radius: 50%;
+            background: radial-gradient(circle, var(--primary) 0%, transparent 70%);
+            filter: blur(50px);
+            animation: float 8s ease-in-out infinite, pulse 4s ease-in-out infinite;
+        }
+
+        .shape-2 {
+            bottom: 10%;
+            right: 15%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, var(--secondary) 0%, transparent 70%);
+            filter: blur(60px);
+            animation: float 10s ease-in-out infinite reverse, pulse 5s ease-in-out infinite 1s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) scale(1); }
+            50% { transform: translateY(-40px) scale(1.05); }
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.15; }
+            50% { opacity: 0.3; }
+        }
+    </style>
+</head>
+<body class="error-page">
+    <canvas id="global-canvas"></canvas>
+
+    <!-- Header Section -->
+    <div id="header-container" class="header-container">
+        <header class="header">
+            <div class="header-logo">
+                <a href="index.html" style="display: flex; align-items: center; gap: 0.75rem; text-decoration: none; color: inherit;">
+                    <div class="logo-icon-wrapper">
+                        <div class="logo-top-half"></div>
+                        <div class="logo-bottom-half"></div>
+                    </div>
+                    <span class="logo-text">Fignix</span>
+                </a>
+            </div>
+            
+            <nav class="header-nav">
+                <a href="index.html" class="nav-link">Home</a>
+                <div class="nav-item has-dropdown">
+                    <a href="services.html" class="nav-link">
+                        <span class="dot"></span>Services <span class="dropdown-arrow">›</span>
+                    </a>
+                    <div class="mega-menu">
+                        <div class="mega-menu-grid">
+                            <a href="service-website-design.html" class="mega-service-card">
+                                <div class="card-bg" style="background-image: url('assets/images/service_website_design_hero.png');"></div>
+                                <div class="card-overlay"></div>
+                                <div class="card-content">
+                                    <h4>Website Design & Hosting</h4>
+                                    <span class="card-arrow">›</span>
+                                </div>
+                            </a>
+                            <a href="service-digital-marketing.html" class="mega-service-card">
+                                <div class="card-bg" style="background-image: url('assets/images/service_marketing_hero.png');"></div>
+                                <div class="card-overlay"></div>
+                                <div class="card-content">
+                                    <h4>Digital Marketing</h4>
+                                    <span class="card-arrow">›</span>
+                                </div>
+                            </a>
+                            <a href="service-graphic-logo-design.html" class="mega-service-card">
+                                <div class="card-bg" style="background-image: url('assets/images/service_branding_hero.png');"></div>
+                                <div class="card-overlay"></div>
+                                <div class="card-content">
+                                    <h4>Graphic & Logo Designing</h4>
+                                    <span class="card-arrow">›</span>
+                                </div>
+                            </a>
+                            <a href="service-digital-ooh.html" class="mega-service-card">
+                                <div class="card-bg" style="background-image: url('assets/images/service_ooh_hero.png');"></div>
+                                <div class="card-overlay"></div>
+                                <div class="card-content">
+                                    <h4>Digital OOH Advertising</h4>
+                                    <span class="card-arrow">›</span>
+                                </div>
+                            </a>
+                            <a href="service-print-packaging.html" class="mega-service-card">
+                                <div class="card-bg" style="background-image: url('assets/images/service_print_packaging_hero.png');"></div>
+                                <div class="card-overlay"></div>
+                                <div class="card-content">
+                                    <h4>Print & Packaging</h4>
+                                    <span class="card-arrow">›</span>
+                                </div>
+                            </a>
+                            <a href="service-seo.html" class="mega-service-card">
+                                <div class="card-bg" style="background-image: url('assets/images/service_seo_hero.png');"></div>
+                                <div class="card-overlay"></div>
+                                <div class="card-content">
+                                    <h4>Search Engine Optimization</h4>
+                                    <span class="card-arrow">›</span>
+                                </div>
+                            </a>
+                            <a href="service-ai-photoshoots.html" class="mega-service-card">
+                                <div class="card-bg" style="background-image: url('assets/images/service_ai_photoshoot_hero.png');"></div>
+                                <div class="card-overlay"></div>
+                                <div class="card-content">
+                                    <h4>AI Product Photoshoots</h4>
+                                    <span class="card-arrow">›</span>
+                                </div>
+                            </a>
+                            <a href="service-ai-video.html" class="mega-service-card">
+                                <div class="card-bg" style="background-image: url('assets/images/service_ai_video_hero.png');"></div>
+                                <div class="card-overlay"></div>
+                                <div class="card-content">
+                                    <h4>AI Video Creation</h4>
+                                    <span class="card-arrow">›</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="nav-item">
+                    <a href="about.html" class="nav-link">About Us</a>
+                </div>
+                <div class="nav-item">
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </div>
+            </nav>
+            
+                        <div class="header-action">
+                <!-- Mobile Toggle -->
+                <button class="mobile-menu-toggle" id="mobile-toggle" aria-label="Toggle Mobile Menu">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <line x1="3" y1="12" x2="21" y2="12" class="line-mid"></line>
+                        <line x1="3" y1="6" x2="21" y2="6" class="line-top"></line>
+                        <line x1="3" y1="18" x2="21" y2="18" class="line-bot"></line>
+                    </svg>
+                </button>
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle Theme">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="sun-icon toggle-icon"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.07" x2="5.64" y2="17.66"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="moon-icon toggle-icon"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                </button>
+                <button class="btn btn-primary" onclick="window.location.href='contact.html'">Let's Talk</button>
+            </div>
+            <!-- Mobile Navigation Drawer -->
+            <div class="mobile-nav" id="mobile-nav">
+                <a href="index.html" class="mobile-nav-link">Home</a>
+                <a href="about.html" class="mobile-nav-link">About Us</a>
+                <a href="services.html" class="mobile-nav-link">All Services</a>
+                
+                <div class="mobile-services-accordion">
+                    <div class="mobile-services-label">Specialties</div>
+                    <div class="mobile-services-list">
+                        <a href="service-website-design.html" class="mobile-service-item">Web Design</a>
+                        <a href="service-digital-marketing.html" class="mobile-service-item">Marketing</a>
+                        <a href="service-graphic-logo-design.html" class="mobile-service-item">Branding</a>
+                        <a href="service-seo.html" class="mobile-service-item">SEO Solutions</a>
+                        <a href="service-print-packaging.html" class="mobile-service-item">Packaging</a>
+                    </div>
+                </div>
+                
+                <div style="margin-top: auto; padding-top: 2rem; border-top: 1px solid var(--border-color); display: flex; flex-direction: column; gap: 1rem;">
+                    <a href="contact.html" class="mobile-nav-link" style="color: var(--primary); font-size: 1.5rem;">Contact Us</a>
+                    <button class="btn btn-primary" onclick="openContactModal()" style="width: 100%; padding: 1rem; font-size: 1.1rem; border-radius: 500px;">Let's Talk</button>
+                </div>
+            </div>
+        </header>
+    </div>
+
+    <main class="container" style="position: relative; overflow: hidden;">
+        <section class="error-hero reveal">
+            <!-- Ambient Background Shapes -->
+            <div class="geometric-shape-404 shape-1"></div>
+            <div class="geometric-shape-404 shape-2"></div>
+            
+            <div class="section-label">LOST IN THE DIGITAL VOID</div>
+            <div class="error-code text-highlight">404</div>
+            <h1 class="error-title">Experience Not Found</h1>
+            <p class="error-description">The page you are looking for might have been removed, had its name changed, or is temporarily unavailable. Let's get you back to creating something powerful.</p>
+            <div style="display: flex; gap: 1rem; justify-content: center; margin-top: 1rem;">
+                <button class="btn btn-primary" onclick="window.location.href='index.html'">Return to Homepage</button>
+                <button class="btn btn-outline" onclick="window.location.href='services.html'">View Our Services</button>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer section-padding container" style="background-color: var(--bg-color); border-top: 1px solid var(--border-color);">
+        <div class="footer-bottom">
+            <div class="footer-left">
+                <p class="footer-label">Email Us</p>
+                <a href="mailto:hello@fignix.com" class="footer-email">hello@fignix.com</a>
+                <p class="footer-copy">© 2026 FIGNIXlab. All rights reserved.</p>
+            </div>
+            <div class="footer-links-grid">
+                <div class="footer-column">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">All Services</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="service-website-design.html">Web Design</a></li>
+                        <li><a href="service-digital-marketing.html">Marketing</a></li>
+                        <li><a href="service-seo.html">SEO</a></li>
+                        <li><a href="service-ai-photoshoots.html">AI Photoshoots</a></li>
+                        <li><a href="service-ai-video.html">AI Video</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Social</h4>
+                    <ul class="social-links">
+                        <li><a href="#" aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a></li>
+                        <li><a href="#" aria-label="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg></a></li>
+                        <li><a href="#" aria-label="Twitter"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg></a></li>
+                    </ul>
+                </div>
+                
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js?v=3"></script>
+    <script src="assets/js/global-canvas.js"></script>
+</body>
+</html>

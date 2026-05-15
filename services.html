@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expert Digital Services | Fignix</title>
+    <!-- Theme Script (Immediate to prevent FOUC) -->
+    <script src="assets/js/theme.js"></script>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <canvas id="global-canvas"></canvas>
+
+    <div id="progress-bar" class="scroll-progress"></div>
+    <!-- Header Section -->
+    <div id="header-container" class="header-container">
+        <header class="header">
+            <div class="header-logo">
+                <div class="logo-icon-wrapper">
+                    <div class="logo-top-half"></div>
+                    <div class="logo-bottom-half"></div>
+                </div>
+                <span class="logo-text">Fignix</span>
+            </div>
+            
+            <nav class="header-nav">
+                <a href="index.html" class="nav-link">Home</a>
+                <div class="nav-item has-dropdown">
+                    <a href="services.html" class="nav-link active">
+                        <span class="dot"></span>Services <span class="dropdown-arrow">›</span>
+                    </a>
+                    <div class="mega-menu">
+                        <div class="mega-menu-grid">
+                            <a href="service-website-design.html" class="mega-service-card">
+                                <div class="card-bg" style="background-image: url('assets/images/service_website_design_hero.png');"></div>
+                                <div class="card-overlay"></div>
+                                <div class="card-content">
+                                    <h4>Website Design & Hosting</h4>
+                                    <span class="card-arrow">›</span>
+                                </div>
+                            </a>
+                            <a href="service-digital-marketing.html" class="mega-service-card">
+                                <div class="card-bg" style="background-image: url('assets/images/service_marketing_hero.png');"></div>
+                                <div class="card-overlay"></div>
+                                <div class="card-content">
+                                    <h4>Digital Marketing</h4>
+                                    <span class="card-arrow">›</span>
+                                </div>
+                            </a>
+                            <a href="service-graphic-logo-design.html" class="mega-service-card">
+                                <div class="card-bg" style="background-image: url('assets/images/service_branding_hero.png');"></div>
+                                <div class="card-overlay"></div>
+                                <div class="card-content">
+                                    <h4>Graphic & Logo Designing</h4>
+                                    <span class="card-arrow">›</span>
+                                </div>
+                            </a>
+                            <a href="service-digital-ooh.html" class="mega-service-card">
+                                <div class="card-bg" style="background-image: url('assets/images/service_ooh_hero.png');"></div>
+                                <div class="card-overlay"></div>
+                                <div class="card-content">
+                                    <h4>Digital OOH Advertising</h4>
+                                    <span class="card-arrow">›</span>
+                                </div>
+                            </a>
+                            <a href="service-print-packaging.html" class="mega-service-card">
+                                <div class="card-bg" style="background-image: url('assets/images/service_print_packaging_hero.png');"></div>
+                                <div class="card-overlay"></div>
+                                <div class="card-content">
+                                    <h4>Print & Packaging</h4>
+                                    <span class="card-arrow">›</span>
+                                </div>
+                            </a>
+                            <a href="service-seo.html" class="mega-service-card">
+                                <div class="card-bg" style="background-image: url('assets/images/service_seo_hero.png');"></div>
+                                <div class="card-overlay"></div>
+                                <div class="card-content">
+                                    <h4>Search Engine Optimization</h4>
+                                    <span class="card-arrow">›</span>
+                                </div>
+                            </a>
+                            <a href="service-ai-photoshoots.html" class="mega-service-card">
+                                <div class="card-bg" style="background-image: url('assets/images/service_ai_photoshoot_hero.png');"></div>
+                                <div class="card-overlay"></div>
+                                <div class="card-content">
+                                    <h4>AI Product Photoshoots</h4>
+                                    <span class="card-arrow">›</span>
+                                </div>
+                            </a>
+                            <a href="service-ai-video.html" class="mega-service-card">
+                                <div class="card-bg" style="background-image: url('assets/images/service_ai_video_hero.png');"></div>
+                                <div class="card-overlay"></div>
+                                <div class="card-content">
+                                    <h4>AI Video Creation</h4>
+                                    <span class="card-arrow">›</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="nav-item">
+                    <a href="about.html" class="nav-link">About Us</a>
+                </div>
+                <div class="nav-item">
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </div>
+            </nav>
+            
+                        <div class="header-action">
+                <!-- Mobile Toggle -->
+                <button class="mobile-menu-toggle" id="mobile-toggle" aria-label="Toggle Mobile Menu">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <line x1="3" y1="12" x2="21" y2="12" class="line-mid"></line>
+                        <line x1="3" y1="6" x2="21" y2="6" class="line-top"></line>
+                        <line x1="3" y1="18" x2="21" y2="18" class="line-bot"></line>
+                    </svg>
+                </button>
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle Theme">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="sun-icon toggle-icon"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.07" x2="5.64" y2="17.66"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="moon-icon toggle-icon"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                </button>
+                <button class="btn btn-primary" onclick="openContactModal()">Let's Talk</button>
+            </div>
+            <!-- Mobile Navigation Drawer -->
+            <div class="mobile-nav" id="mobile-nav">
+                <a href="index.html" class="mobile-nav-link">Home</a>
+                <a href="about.html" class="mobile-nav-link">About Us</a>
+                <a href="services.html" class="mobile-nav-link">All Services</a>
+                
+                <div class="mobile-services-accordion">
+                    <div class="mobile-services-label">Specialties</div>
+                    <div class="mobile-services-list">
+                        <a href="service-website-design.html" class="mobile-service-item">Web Design</a>
+                        <a href="service-digital-marketing.html" class="mobile-service-item">Marketing</a>
+                        <a href="service-graphic-logo-design.html" class="mobile-service-item">Branding</a>
+                        <a href="service-seo.html" class="mobile-service-item">SEO Solutions</a>
+                        <a href="service-print-packaging.html" class="mobile-service-item">Packaging</a>
+                    </div>
+                </div>
+                
+                <div style="margin-top: auto; padding-top: 2rem; border-top: 1px solid var(--border-color); display: flex; flex-direction: column; gap: 1rem;">
+                    <a href="contact.html" class="mobile-nav-link" style="color: var(--primary); font-size: 1.5rem;">Contact Us</a>
+                    <button class="btn btn-primary" onclick="openContactModal()" style="width: 100%; padding: 1rem; font-size: 1.1rem; border-radius: 500px;">Let's Talk</button>
+                </div>
+            </div>
+        </header>
+    </div>
+
+    <main>
+
+    <section class="cta-section reveal-up">
+        <div class="container">
+            <div class="section-label">Capabilities</div>
+            <h1 style="margin-bottom: 4rem;">Full-Spectrum Digital Services</h1>
+            <div class="capabilities-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 2rem;">
+                <div class="service-card">
+                    <h3>Website Design</h3>
+                    <p style="margin: 1.5rem 0; color: var(--text-light);">Fast, secure, and conversion-focused websites.</p>
+                    <a href="service-website-design.html" style="color: var(--primary);">Learn More →</a>
+                </div>
+                <div class="service-card">
+                    <h3>SEO Mastery</h3>
+                    <p style="margin: 1.5rem 0; color: var(--text-light);">Sustainable organic growth and rankings.</p>
+                    <a href="service-seo.html" style="color: var(--primary);">Learn More →</a>
+                </div>
+                <div class="service-card">
+                    <h3>Digital Marketing</h3>
+                    <p style="margin: 1.5rem 0; color: var(--text-light);">Growth-focused campaigns and lead generation.</p>
+                    <a href="service-digital-marketing.html" style="color: var(--primary);">Learn More →</a>
+                </div>
+                <div class="service-card">
+                    <h3>AI Photoshoots</h3>
+                    <p style="margin: 1.5rem 0; color: var(--text-light);">Pro-level photography via generative AI.</p>
+                    <a href="service-ai-photoshoots.html" style="color: var(--primary);">Learn More →</a>
+                </div>
+                <div class="service-card">
+                    <h3>AI Video</h3>
+                    <p style="margin: 1.5rem 0; color: var(--text-light);">Dynamic video content using neural networks.</p>
+                    <a href="service-ai-video.html" style="color: var(--primary);">Learn More →</a>
+                </div>
+                <div class="service-card">
+                    <h3>Graphic Design</h3>
+                    <p style="margin: 1.5rem 0; color: var(--text-light);">Modern visual identity and logo systems.</p>
+                    <a href="service-graphic-logo-design.html" style="color: var(--primary);">Learn More →</a>
+                </div>
+                <div class="service-card">
+                    <h3>Digital OOH</h3>
+                    <p style="margin: 1.5rem 0; color: var(--text-light);">High-impact digital billboard advertising.</p>
+                    <a href="service-digital-ooh.html" style="color: var(--primary);">Learn More →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    </main>
+    
+    <!-- CTA Section -->
+    <section class="cta-section reveal-up">
+        <div class="container">
+            <h2 class="cta-heading">Ready to manifest your brand's digital future?</h2>
+            <div class="cta-actions">
+                <button class="btn btn-primary" onclick="openContactModal()">Start Your Project</button>
+            </div>
+        </div>
+    </section>
+
+        <footer class="footer section-padding container" style="background-color: var(--bg-color); border-top: 1px solid var(--border-color);">
+        <div class="footer-bottom">
+            <div class="footer-left">
+                <p class="footer-label">Email Us</p>
+                <a href="mailto:hello@fignix.com" class="footer-email">hello@fignix.com</a>
+                <p class="footer-copy">© 2026 FIGNIXlab. All rights reserved.</p>
+            </div>
+            <div class="footer-links-grid">
+                <div class="footer-column">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">All Services</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="service-website-design.html">Web Design</a></li>
+                        <li><a href="service-digital-marketing.html">Marketing</a></li>
+                        <li><a href="service-graphic-logo-design.html">Branding</a></li>
+                        <li><a href="service-digital-ooh.html">Digital OOH</a></li>
+                        <li><a href="service-print-packaging.html">Print & Packaging</a></li>
+                        <li><a href="service-seo.html">SEO</a></li>
+                        <li><a href="service-ai-photoshoots.html">AI Photoshoots</a></li>
+                        <li><a href="service-ai-video.html">AI Video</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Social</h4>
+                    <ul class="social-links">
+                        <li><a href="#" aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a></li>
+                        <li><a href="#" aria-label="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg></a></li>
+                        <li><a href="#" aria-label="Twitter"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- Contact Modal -->
+    <div id="contact-modal" class="contact-modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeContactModal()">&times;</button>
+            <div class="modal-header">
+                <h2 class="modal-title">Let's Talk</h2>
+                <p class="modal-subtitle">Share your vision with us and we'll bring it to life.</p>
+            </div>
+            <form class="modal-form" onsubmit="handleFormSubmit(event)">
+                <div class="form-group">
+                    <label for="modal-name">Full Name</label>
+                    <input type="text" id="modal-name" placeholder="John Doe" required>
+                </div>
+                <div class="form-group">
+                    <label for="modal-email">Email Address</label>
+                    <input type="email" id="modal-email" placeholder="john@example.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="modal-service">Service Interested In</label>
+                    <select id="modal-service" required>
+                        <option value="" disabled selected>Select a service</option>
+                        <option value="website">Website Design & Hosting</option>
+                        <option value="marketing">Digital Marketing</option>
+                        <option value="seo">SEO Optimization</option>
+                        <option value="branding">Graphic & Logo Design</option>
+                        <option value="ooh">Digital OOH Advertising</option>
+                        <option value="ai">AI Creative Services</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="modal-message">Message</label>
+                    <textarea id="modal-message" placeholder="Tell us about your project..." required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 1rem;">Send Message</button>
+            </form>
+        </div>
+    </div>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/global-canvas.js"></script>
+</body>
+</html>
